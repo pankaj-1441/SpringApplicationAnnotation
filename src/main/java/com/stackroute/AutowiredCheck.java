@@ -5,12 +5,12 @@ import com.stackroute.domain.Movie;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class ScopeCheck {
+public class AutowiredCheck {
     public static void main(String[] args) {
         ApplicationContext context=new AnnotationConfigApplicationContext(BeanConfig.class);
-        Movie movie1=context.getBean("movie1",Movie.class);
-        Movie movie2=context.getBean("movie2",Movie.class);
-        System.out.println(movie1==movie2);
+        Movie movie=context.getBean("movieBean",Movie.class);
+        movie.getActorInfo();
+
 
 
     }
